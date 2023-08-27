@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2023 VoltageOS
+# Copyright (C) 2023 Evolution
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,19 +22,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from santoni device
 $(call inherit-product, device/xiaomi/santoni/device.mk)
 
-# Inherit some common VoltageOS stuff.
-$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
-
-# Official-ify
-VOLTAGE_BUILD_TYPE := OFFICIAL
-
-# Boot animation
-TARGET_BOOT_ANIMATION_RES := 1280
+# Inherit some common Evolution X stuff.
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+EVO_BUILD_TYPE := UNOFFICIAL
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_BUILD_APERTURE_CAMERA := true
+TARGET_USES_PICO_GAPPS := true
 
 PRODUCT_DEVICE := santoni
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi 4X
-PRODUCT_NAME := voltage_santoni
+PRODUCT_NAME := evolution_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
